@@ -1,0 +1,927 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext);
+
+:root {
+	--control-text-color: #777;
+}
+
+/**
+ * forked from pixyll.com
+ * MIT license
+ */
+
+h1,
+.h1,
+.f1 {
+	text-align: center;
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+h2,
+.h2,
+.f2 {
+	text-align: center;
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+h3,
+.h3,
+.f3 {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+p,
+.p,
+.f4,
+h4,
+h5,
+h6,
+dl,
+ol,
+ul,
+pre[cid],
+div[cid],
+#typora-source {
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+}
+
+h4 {
+	font-size: 1.13rem;
+}
+/*
+ Pixyll
+ A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+ Best served with BASSCSS (http://jxnblk.github.io/basscss)
+ Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
+
+*/
+
+body {
+	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", 'Segoe UI Emoji', Serif;
+	line-height: 1.5rem;
+	font-weight: 400;
+}
+
+#write {
+	max-width: 914px;
+	color: #333;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+}
+body {
+	font-size: 1.2rem;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+table {
+	width: 100%;
+	font-size: 1.125rem;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+	padding: 12px;
+	line-height: 1.2;
+	vertical-align: top;
+	border-top: 1px solid #333;
+}
+table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #333;
+}
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+table > tbody + tbody {
+	border-top: 2px solid #333;
+}
+p {
+	font-weight: 300;
+	line-height: 1.5;
+}
+abbr {
+	border-bottom: 1px black dotted;
+	cursor: help;
+}
+pre,
+code {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code,
+.md-fences  {
+	color: #7a7a7a;
+}
+
+.md-fences {
+	padding: 1.125em;
+	margin-bottom: 0.88em;
+	font-size: 1rem;
+	border: 1px solid #7a7a7a;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+blockquote {
+	padding: 1.33em;
+	font-style: italic;
+	border-left: 5px solid #7a7a7a; /*左侧实线边框*/
+	color: #555;
+}
+blockquote em {
+	color: #000;
+}
+blockquote footer {
+	font-size: 0.85rem;
+	font-style: normal;
+	background-color: #fff;
+	color: #7a7a7a;
+	border-color: transparent;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1em 0 0.5em;
+}
+@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before{
+		top: 1px;
+	}
+	.p,
+	p,
+	li {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
+}
+@media (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (min-width: 64em) {
+	.h1,
+	h1 {
+		font-size: 4.498rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.29rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.9rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.591rem;
+	}
+	#write>h4.md-focus:before{
+		top:4px;
+	}
+}
+a {
+	color: #463F5C;
+	text-decoration: underline;
+}
+
+#write {
+	padding-top: 2rem;
+}
+
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+	white-space: pre;
+	border: 0px;
+
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+	width: 100vw;
+	max-width: calc(100% + 60px);
+
+	margin-left: -30px;
+	margin-bottom: 2em;
+	margin-top: -2010px;
+	padding-top: 2000px;
+	padding-bottom: 10px;
+	line-height: 1.5em;
+	color: #7a7a7a;
+	background-color: #fafafa;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 300;
+	clear: both;
+	padding-left: 0;
+	font-size:1.125rem;
+}
+.md-image>.md-meta {
+	color: #463F5C
+}
+.footnotes {
+	font-size:1.1rem;
+}
+.md-tag {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+.code-tooltip {
+	background: white;
+}
+.code-tooltip-content {
+	font-size: 1.1rem;
+}
+
+.task-list{
+	padding-left: 0;
+}
+
+.md-task-list-item {
+	padding-left:34px;
+}
+
+.md-task-list-item > input{
+	width: 1.25rem;
+	height: 1.25rem;
+	display: block;
+	-webkit-appearance: initial;
+	top: -0.2rem;
+	margin-left: -1.6em;
+	margin-top: calc(1rem - 7px);
+	border: none;
+}
+
+.md-task-list-item > input:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.md-task-list-item > input:before{
+	border: 1px solid #555;
+	border-radius: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: #fff;
+	content: ' ';
+	transition: background-color 20ms ease-in-out;
+	display: block;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	background: #333;
+	border-width: 2px;
+	display:inline-block;
+	transition: background-color 20ms ease-in-out;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after {
+	opacity: 1;
+}
+
+.md-task-list-item > input:after {
+	opacity: 1;
+	-webkit-transition: opacity 0.02s ease-in-out;
+	-moz-transition: opacity 0.02s ease-in-out;
+	transition: opacity 0.02s ease-in-out;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0.4375rem;
+	left: 0.28125rem;
+	width: 0.9375rem;
+	height: 0.5rem;
+	border: 3px solid #fff;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+	opacity: 0;
+}
+
+.md-tag {
+	color:inherit;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+#typora-sidebar {
+	font-size:1rem !important;
+}
+
+.html-for-mac #typora-sidebar {
+	background-color:white;
+}
+
+.outline-content li, .outline-content ul {
+	font-size:1.2rem !important;
+}
+
+.outline-title {
+	line-height: inherit;
+	margin-top: 10px;
+}
+
+.outline-expander {
+	width: 18px;
+}
+
+.outline-expander:before {
+ 	content: "+";
+	font-family: inherit;
+	color: rgb(108, 108, 108); 
+  font-size: 1.5rem;
+ 	top: -0.1rem;
+}
+
+.outline-expander:hover:before {
+	content: "+";
+}
+
+.outline-item-open>.outline-item>.outline-expander:before{
+	content: "-";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.os-windows #typora-source {
+	font-family: inherit;
+
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.md-diagram-panel {
+	margin-top: 24px;
+	margin-left: -1.2em;
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -3.4em;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+li {
+	margin: 0.5rem 0;
+}
+
+li > *:last-child {
+	margin-bottom: 0;
+}
+
+
+/****------自定义样式：为了便于背诵，添加高亮模糊效果*****/
+/*Padding是内边距，Margin是外边距*/
+
+/* Blockquote 样式 */
+blockquote {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #E6F3FF;
+    background-color: #f0f8ff;
+    border-radius: 7px;
+}
+blockquote p {
+    font-style: normal; /* 取消斜体 */
+    margin: 0.1rem 0;
+}
+
+/* 加粗效果 */
+strong {
+    font-weight: bold;
+    color: #0000ff;
+}
+
+/* 下划线效果 */
+u {
+    text-decoration: none;  /* 删掉文本下划线效果 */
+    border-bottom: 3px solid #0000ff;
+    padding-bottom: 2.5px;
+}
+
+/* 大纲内容 */
+.outline-content li, .outline-content ul {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    color: #000;
+}
+.outline-content li, .outline-content ul :hover {
+	text-decoration: none;	 /* 删掉文本下划线效果 */
+}
+
+
+/* 标题样式 */
+h1, .h1, .f1 {
+    text-align: center;
+    font-size: 2.7rem;
+    line-height: 150%; /* 行间距设置为字体大小的150% */
+
+    color: #0000ff; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 文字阴影 */
+    background: linear-gradient(to right, #0000ff, #ffc371); /* 背景渐变 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 2rem 0; /* 增加上下外边距 */
+    position: relative;
+}
+h1::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #0000ff, #ffc371);
+    left: 0;
+    top: -13px;
+}
+
+/* 段落样式 */
+p {
+    color: #003366;
+    font-family: arial, sans-serif;
+    font-weight: 380;
+}
+
+/* 列表样式 */
+ul, ol {
+     padding-left: 1.6rem;   /*列表标记距离左侧宽度*/
+}
+
+ul:first-child, ol:first-child {
+     margin-top: 0;
+}
+ul:last-child, ol:last-child {
+    margin-bottom: 0;
+}
+
+/* 列表标记样式 */
+ul .md-list-item::marker{
+    font-size: 20px !important;    /*标记物大小*/
+    color: #0000ff; 			/*无序标记颜色*/
+}
+ul ul .md-list-item::marker {
+    font-size: 20px;
+    list-style-type: circle;
+}
+ul ul ul .md-list-item::marker {
+    font-size: 20px;
+    list-style-type: square;
+}
+ol .md-list-item::marker {
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    font-size: 21px;
+    color: #0000ff;
+}
+
+/*行内代码*/
+code {
+    color: #d63384; 				/* 文本颜色 */
+    background-color: #f8f0ff; 		/* 背景色 */
+    font-family: "Fira Code", Consolas, "Courier New", monospace; 
+    font-size: 1.1rem; 
+    padding: 2px 6px; /* 内边距，上下2px，左右6px */
+    border-radius: 4px; /* 圆角 */
+    border: 1px solid #e1e1e1; /* 添加细边框 */
+    font-weight: 500; /* 字体粗细 */
+}
+
+/*分割线*/
+hr {
+    border: none; /* 移除默认边框 */
+    height: 3px; /* 分割线高度 */
+    background: linear-gradient(to right, #0000ff, #ffc371); /* 渐变色，与 h1 标题一致 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    margin: 2rem 0; /* 上下外边距 */
+    border-radius: 2px; /* 轻微圆角 */
+}
+
+/* 高亮模糊效果 模糊为8px*/
+mark {
+    background-color: #ffffcc;
+    filter: blur(8px); 
+    transition: filter 0.01s ease;	
+}
+mark:hover {filter: blur(0); }
+
+/*不限制高度但是有模糊效果*/
+pre.md-fences {
+    position: relative;	/* 相对定位，用于子元素定位 */
+    max-height: none; /*200px、none*/
+    overflow: visible;   /*hidden；visible*/
+    filter: blur(0px);    /*13px；0*/
+  background-color:rgba(240, 248, 255, 0.2);;
+  font-family: "Fira Code", Consolas, "Lucida Console", "Courier", monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.3 rem;
+  font-weight: 500;   /* 中等加粗 */
+  margin: 8px 2px;       /* 上下8px，左右2px（与外部的间距） */
+  padding: 4px 2px;    /* 上下12px，左右15px（代码与边框的间距） */
+  border-radius: 7px;  /* 圆角 */
+}
+
+/* 悬停或聚焦时，取消高度限制和模糊效果 */
+pre.md-fences:hover, pre.md-fences:focus-within {
+    max-height: none; 
+    filter: blur(0);         
+    overflow: visible;    
+}
+/* 确保 CodeMirror 编辑器内容可见 */
+div.CodeMirror {overflow: visible;} /* 允许内容溢出可见 */
+
+/*悬停时移除代码文本的模糊效果*/
+pre.md-fences:hover .CodeMirror-code {filter: blur(0);  }
+
+.md-alert.md-alert-important {
+    background-color:rgba(130, 80, 223,0.05);
+    padding: 0 15px 8px 12px;
+}
+.md-alert.md-alert-note {
+     background-color:rgba(207, 34, 46,0.05);
+    padding: 0 15px 8px 12px;
+}
+.md-alert.md-alert-warning {
+    background-color:rgba(154, 103, 0,0.05);
+}
+
+.md-alert.md-alert-tip {
+    background-color:rgba(31, 136, 61,0.05);
+padding: 0 15px 8px 12px;
+}
+
+.md-alert.md-alert-caution {
+   background-color:rgba(9, 105, 218,0.05);
+}
+
+
+
+</style><title>韩刚2级笔译英译汉</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><span>笔译需要站得高,才能“译”得远!笔译绝不能停留在表面, 而是要深入分析、清晰传达,真正做到“深入浅出”,“得意忘 形”! </span></p><p><mark><span>The right approach to translation is to go beyond what is said into what is implied, and to render what is implied in a clear, concise way!</span></mark></p><ul><li><p><mark><span>go beyond</span></mark><span> 意为“超越、超出”，后接宾语（what is s发吧aid），构成动宾结构。</span>
+<span>例句：True understanding requires us to go beyond the surface.</span></p></li><li><p><strong><span>&quot;render...in a...way&quot;</span></strong>
+<span>&quot;render&quot;（表达/翻译）与方式状语&quot;in a clear, concise way&quot;搭配，表示“</span><strong><span>以清晰简洁的方式呈现</span></strong><span>”。</span>
+<span>类似搭配：</span><em><span>express...in a polite way（礼貌地表达）</span></em></p></li></ul><h1 id='1-先从后主'><span>1 先从后主</span></h1><blockquote><p><span>For any outsiders still doubting the reality of reform in Myanmar—for decades one of the region’s most </span><strong><span>isolated</span></strong><span> nations—Aung San Suu Kyi’s flight this week from Yangon to Bangkok in neighbouring Thailand should be seen as a historic sign that significant change is indeed underway.</span></p><p><mark><span>几十年来,缅甸一直是亚太地区最孤立的国家之一。但昂山素季本周将从仰光飞往泰国曼谷访问,对于质疑缅甸改革诚意的人来说,此行历史意义重大,反映该国确实正在推行大规模变革。</span></mark><span> </span></p></blockquote><p><span> </span><strong><span>句子结构分析</span></strong><span>：</span></p><ul><li><p><strong><span>主句</span></strong><span>：Aung San Suu Kyi’s flight... should be seen as a historic sign...</span></p></li><li><p><strong><span>状语从句</span></strong><span>（用for引导的短语）：For any outsiders still doubting the reality of reform in Myanmar</span></p></li><li><p><strong><span>插入语</span></strong><span>：—for decades one of the region’s most isolated nations—</span></p></li></ul><p><span> </span><strong><span>固定搭配</span></strong><span>：</span></p><ul><li><p><strong><mark><span>for any outsiders</span></mark></strong><span>：对外部观察者而言（“for + 群体”是常见</span><strong><span>引导观点</span></strong><span>的方式）</span></p></li><li><p><strong><mark><span>still doubting the reality of</span></mark></strong><span>：仍然怀疑……的真实性</span></p></li><li><p><span>Bangkok in neighbouring Thailand 位于邻国泰国的曼谷</span></p></li><li><p><strong><mark><span>should be seen as</span></mark></strong><span>：应被视为（常用于判断和观点表达）</span></p></li><li><p><strong><mark><span>a historic sign that..</span></mark><span>.</span></strong><span>：……的历史性标志（“sign that”引导名词性从句）</span></p></li><li><p><mark><span>significant change</span></mark><span>  重大变化</span></p></li><li><p><strong><mark><span>is indeed underway</span></mark></strong><span>：确实正在进行中（“</span><mark><span>underway</span></mark><span>”是</span><strong><span>“在进行中</span></strong><span>”的固定词汇）</span></p></li><li><p><span>Aung San Suu Kyi  昂山素季（缅甸反对派领袖）</span></p></li><li><p><span>Yangon 仰光 Bangkok  曼谷</span></p></li><li><p><mark><span>They have labored to complete the job</span></mark><span>. 他们努力完成这一工作。</span></p></li></ul><blockquote><p><span>It is a brief flight—a little over an hour—yet by taking it, the once-repressed icon of Myanmese freedom will travel light years from her former days under house arrest in her rambling mansion, cut off from her two sons and her husband, not to mention the outside world.</span></p><p>&nbsp;</p><p><mark><span>昂山素季是缅甸民主运动代表人物,一度饱受压制,被软禁家中,无法与两个儿子和丈 夫见面,与外界更是完全隔绝。她前往曼谷的航程只要一个多小时,但却象征了缅甸巨大的 进步。</span></mark></p></blockquote><p><span> </span><strong><span>句子结构分析</span></strong><span>：</span></p><ul><li><p><strong><span>主句</span></strong><span>：It is a brief flight</span></p></li><li><p><strong><span>插入说明</span></strong><span>：—a little over an hour—</span></p></li><li><p><strong><span>让步状语从句</span></strong><span>：yet by taking it, ...</span></p></li><li><p><strong><span>主句部分</span></strong><span>：the once-repressed icon... will travel light years from her former days...</span></p></li></ul><p><span> </span><strong><span>固定搭配</span></strong><span>：</span></p><ul><li><p><strong><mark><span>a brief flight</span></mark></strong><span>：短途飞行</span></p></li><li><p><strong><mark><span>a little over an hour</span></mark></strong><span>：略多于一小时（常见时间表达方式）</span></p></li><li><p><strong><mark><span>yet by doing sth</span></mark></strong><span>：然而通过做某事（“yet”引导让步语气）</span></p></li><li><p><strong><mark><span>the once-repressed icon</span></mark></strong><span>：曾经受压迫的象征人物（形容词“once-repressed”常用于修饰人物历史）</span></p></li><li><p><strong><mark><span>travel light years from...</span></mark></strong><span>：与……相比进步巨大（“light years”作比喻，表示距离遥远的改变）</span></p></li><li><p><strong><mark><span>former days</span></mark></strong><span>  从前的日子/过去的时光</span></p></li><li><p><strong><span>under house arrest</span></strong><span>：软禁状态下（法律或政治语境中的固定表达）</span></p></li><li><p><strong><span>in her rambling mansion</span></strong><span> 在她那座杂乱宽大（或结构复杂）的宅邸中</span></p></li><li><p><strong><span>cut off from sb/sth</span></strong><span>：与……隔绝</span></p></li><li><p><strong><span>not to mention</span></strong><span>：更不用说（用于递进，常用于口语或书面强调）</span></p></li></ul><p>&nbsp;</p><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br></p><p><span>句子=背景+表态，主句表态，从句背景，先从后主，逆序翻译。</span></p></div><blockquote><p><span>The stunning rise of Apple, whose late boss, Steve Jobs, made a fetish of design, has no doubt influenced Google&#39;s thinking since then. The shift towards mobile computing has also forced it to take design more seriously. &quot;There&#39;s an emotional reaction with a personalised mobile device that you don&#39;t get with a mouse and a keyboard,&quot; explains Jon Wiley, a search designer who is part of an initiative to revamp Google&#39;s design philosophy that was launched by Larry Page when he became chief executive in 2011.</span></p><p><span>已故的苹果老板史蒂夫·乔布斯对设计推崇备至,苹果的惊世崛起无疑影响了谷歌的决策, 移动计算的发展趋势也迫使谷歌更加重视设计。“个性化移动设备可以让人产生情绪反应,这一点是带有鼠标和键盘的电脑设备所不具备的”,搜索设计师乔恩·威利如是说。2011年拉里·佩奇就任谷歌行政总裁后启动了一项旨在调整谷歌设计理念的项目,乔恩·威利是该项目组的成员。</span></p></blockquote><ol start='' ><li><p><mark><span>stunning rise</span></mark><span>（惊人的崛起）</span></p></li><li><p><mark><span>make a fetish of</span></mark><span>（痴迷于）</span></p></li><li><p><mark><span>take...seriously</span></mark><span>（认真对待）</span></p></li><li><p><mark><span>emotional reaction</span></mark><span>（情感反应）</span></p></li><li><p><mark><strong><span>personalized mobile device</span></strong></mark><span>（个性化移动设备）</span></p></li><li><p><mark><strong><span>revamp...philosophy</span></strong></mark><span>（革新...理念）</span></p></li><li><p><mark><strong><span>launch an initiative</span></strong><span>（</span></mark><span>发起一项倡议）</span></p></li><li><p><span>The company made a fetish of innovation, just like its founder.</span>
+<span>这家公司像其创始人一样痴迷于创新。</span></p></li><li><p><span>The government has launched an initiative to revamp the education system.</span>
+<span>政府发起了一项革新教育体系的倡议。</span></p></li><li><p><span>Users have an emotional reaction to personalized products.</span>
+<span>用户对个性化产品会产生情感反应。</span></p></li><li><p><span>The tech industry has been forced to take sustainability more seriously.</span>
+<span>科技行业不得不更加认真地对待可持续性。</span></p></li><li><p><span>rework reshape retool refine</span></p></li></ol><p>&nbsp;</p><p>&nbsp;</p><h1 id='2'><span>2</span></h1><blockquote><p><span>But when Shakespeare&#39;s talking about &quot;love,&quot; he&#39;s not talking about romantic love or feminine beauty——the first 126 sonnets in Shakespeare&#39;s work are generally understood to be addressed towards a man, and many of the surrounding pieces are actually encouraging procreation. Shakespeare isn&#39;t wooing a beautiful woman; he&#39;s telling a wealthy young ponz exactly what he wants to hear: that he&#39;s just so damn sexy that it&#39;d be pretty much the worst thing in the world if he didn&#39;t have kids.</span>
+<span>参考译文</span>
+<span>不过,莎士比亚所谈及的“爱”并非指浪漫爱情或女性阴柔之美,人们一般认为,他的前 126首十四行诗是写给男性的,其他许多首诗都是在鼓励生育后代。莎士比亚笔下的诗不是“窈窕淑女、君子好逑”般的卿卿我我,而是向富家子弟娓娓道出顺耳忠言:像你这般风流倜傥,若无子嗣岂不是世间一大憾事!</span></p></blockquote><ul><li><p><mark><span>romantic love / feminine beauty</span></mark><span>   “浪漫的爱情 / 女性的美貌”。</span></p></li><li><p><mark><span>surrounding pieces</span></mark><span>  （周围碎片）相关的作品（此处是文学上的说法）</span></p></li><li><p><span>（</span><strong><span>woo</span></strong><span> 是文艺用语，指求爱）ponz约等于guy</span></p></li><li><p><mark><span>telling someone exactly what they want to hear</span></mark><span> 告诉某人他们最想听的话（常含讨好、恭维意味）</span></p></li><li><p><strong><span>exactly</span></strong><span> 是一个</span><strong><span>强调副词</span></strong><span>，用来</span><strong><span>加强语义的准确性或完全性</span></strong><span>。</span>
+<span>修饰</span><strong><span>&quot;what they want to hear&quot;</span></strong><span>，意思是“恰恰是他们想听的话”，“一字不差地就是他们希望听到的内容”、“</span><strong><span>正是</span></strong><span>他们想听的话。</span></p></li><li><p><strong><mark><span>just so damn sexy</span></mark></strong><span>    俚语表达，意为“性感到极点”，带夸张和调侃色彩</span></p></li><li><p><mark><span>pretty much the worst thing in the world</span></mark><span>   搭配含义：几乎是世界上最糟的事（</span><strong><span>pretty much</span></strong><span> 在口语中常用来加强语气）</span></p></li><li><p><strong><mark><span>She did exactly what I told her.</span></mark></strong>
+<span>她</span><strong><span>完全照我说的做了</span></strong><span>。</span>
+<span>→ exactly 修饰整个宾语从句。</span></p><p><strong><mark><span>That’s exactly what I needed.</span></mark></strong>
+<span> 这</span><strong><span>正是我需要的东西</span></strong><span>。</span></p><p><mark><strong><span>He said exactly the same thing.</span></strong></mark>
+<span> 他</span><strong><span>说的一模一样</span></strong><span>。</span></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h1 id='3'><span>3</span></h1><blockquote><p><span>Imagine you have two candidates for a job. Their CVs are equally good, and they both give good interview. You cannot help noticing, though, that one is pug-ugly and the other is handsome. Are you swayed by their appearance?</span></p><p><mark><span>假设有两人应聘同一职位,简历显示两人同样优秀,面试表现也同样出色/旗鼓相当/不分伯仲/不相上下,这时你禁不住将注意力转向两人外表:一个其貌不扬,一个英俊潇洒,那你会以貌取人吗?</span></mark></p></blockquote><ol start='' ><li><p><strong><span>Imagine (that)...</span></strong></p><ul><li><p><span>用于提出假设场景，后接宾语从句。</span></p></li><li><p><span>例句：</span><em><span>Imagine you are the manager of this team.</span></em></p></li></ul></li><li><p><strong><span>cannot help doing sth.</span></strong></p><ul><li><p><span>表示“忍不住做某事”。</span></p></li><li><p><span>例句：</span><em><span>I cannot help laughing when I see his funny face.</span></em></p></li></ul></li><li><p><strong><span>pug-ugly</span></strong><span> “非常丑陋的”（非正式用语）正式场合可用 &quot;extremely unattractive&quot;。</span></p><ul><li><p><span>例句：</span><em><span>The building is pug-ugly and ruins the view.</span></em></p></li></ul></li><li><p><strong><span>swayed by sth.</span></strong></p><ul><li><p><span>表示被……影响或左右，多用于情感、舆论、外在因素等情境。</span></p></li><li><p><span>例句：</span><em><span>Judges should not be swayed by public opinion.</span></em></p></li></ul></li><li><p><strong><span>equally good</span></strong></p><ul><li><p><span>&quot;equally&quot; + 形容词，表示“同样……”。</span></p></li><li><p><span>例句：</span><em><span>Both options are equally valid.</span></em></p></li></ul></li><li><p><strong><span>give an interview</span></strong></p><ul><li><p><span>通常指“参加面试”（此处应为复数 &quot;give good interviews&quot;）如果指“面试表现”，可用不可数形式，但更常见用复数。</span></p></li><li><p><span>例句：</span><em><span>She gave a brilliant interview and got the job.</span></em></p><p>&nbsp;</p></li></ul></li></ol><p>&nbsp;</p><h1 id='4'><span>4</span></h1><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br></p><ol start='' ><li><p><span>明确代词，统一替换词</span></p></li></ol></div><blockquote><p><span>You cannot help noticing, though, that one is pug-ugly and the other is handsome. Are you </span><strong><span>swayed by their appearance</span></strong><span>? If you </span><strong><span>were swayed by someone&#39;s looks</span></strong><span>, would that be wrong? In the past, people often equated beauty with virtue and ugliness with vice. </span></p><p><span>Biology also suggests that </span><strong><span>beauty</span></strong><span> may, indeed, be a good rule of thumb for assessing someone of either sex. Not an infallible one, and certainly no substitute for an in-depth investigation. But, nevertheless, an </span><strong><span>instinctive one</span></strong><span>, and one that is bound to contribute to the advantage of the </span><strong><span>physically well endowed</span></strong><span>. </span></p><p>&nbsp;</p><p><span>这时你禁不住将注意力转向两人外表:一个其貌不扬,一个英俊潇洒,那你会</span><strong><span>以貌取人</span></strong><span>吗?如若以貌取人,又有何不妥呢?过去人们往往认为美貌者具贤德,丑陋者多凶恶。 </span></p><p><span>从生物学角度来讲,以貌取人确实是人们评判个体优劣的一大经验法则,且这一法则适用 于男女两性。这一法则自有其不妥之处,当然也不能取代对个人的深入了解,但是,以貌取人 是一种直觉判断,因此,貌美之人自然会占得先机。</span></p></blockquote><ul><li><p><span>If you were swayed by someone&#39;s looks, would that be wrong?  </span><strong><span>虚拟语气条件</span></strong><span>句，假设你因为外貌而受到影响。</span></p></li><li><p><span>equated A with B  表示把 A 等同于 B，是抽象判断常见表达。</span></p></li><li><p><span>suggest that 表示指出、显示</span></p></li><li><p><span>a good rule of thumb</span><span>	</span><span>经验法则（来源可能是木工匠人以前用拇指来大概量尺寸</span></p></li><li><p><span>assess someone of either sex 指评估男性或女性，属于中性表达（评估某个人，不管是男性还是女性）</span></p></li><li><p><strong><span>either sex</span></strong><span> 的意思是“两种性别中的任意一种” either = 任何一个</span></p></li></ul><blockquote><p><strong><span>名词修饰结构</span></strong></p><p><span>一、</span><strong><span>assess someone of either sex</span></strong><span> 是什么结构？</span></p><p><span>这里的 </span><strong><span>of either sex</span></strong><span> 是一个限定性后置短语，表示：在“男性”或“女性”这两种性别中，任一性别的人。</span></p><p><strong><span>someone of either sex</span></strong><span> = a person who belongs to either sex</span>
+<span>意思是：一个不管性别是男还是女的人。</span></p><p><span>这种结构非常常见，比如：</span></p><ul><li><p><span>students of all ages（所有年龄段的学生）</span></p></li><li><p><span>people of great talent（有才华的人）</span></p></li><li><p><span>workers of different backgrounds（来自不同背景的工人）</span></p></li></ul><p><span>在这些例子中，</span><strong><span>of + 名词</span></strong><span> 是用来限定前面的名词 </span><strong><span>someone / people / workers</span></strong><span> 的。</span></p><p>&nbsp;</p><p><span>二、为什么不能说 </span><strong><span>either of sex</span></strong><span>？</span></p><p><strong><span>either of</span></strong><span> 是一个常见搭配，但它后面必须接</span><strong><span>复数名词或代词</span></strong><span>，因为它表示“两个中的任意一个”。</span></p><p><span>例如：</span></p><ul><li><p><span>either of them（他们两个中的任意一个）</span></p></li><li><p><span>either of the books（这两本书中的任意一本）</span></p></li></ul><p><span>但不能说：</span></p><p><span>× either of sex（不对，因为 sex 是单数，不是一个“两者”复数集合）</span></p><p><span>你要让 either of 成立，就得说：</span></p><p><span>✓ either of the sexes（两个性别之一）</span></p><p><span>所以完整的标准表达也可以是：</span></p><p><strong><span>assess someone of either sex</span></strong><span>（常用简洁说法）</span>
+<span> </span><strong><span>assess someone of either of the sexes</span></strong><span>（语法正确但冗长，不自然）</span></p><p>&nbsp;</p><ul><li><p><strong><span>someone of either sex</span></strong><span> 是地道、自然的英语表达，表示不论性别的某人。</span></p></li><li><p><strong><span>either of sex</span></strong><span> 是语法错误，因为 either of 要跟复数，而 sex 是不可分的抽象单数。</span></p></li><li><p><span>如果你想用 either of，必须说 </span><strong><span>either of the sexes</span></strong><span>，但通常不这样说</span></p></li></ul></blockquote><ul><li><p><span>an infallible one 表示不会出错的判断</span></p></li><li><p><span>no substitute for 表示不能代替</span></p></li><li><p><span>in-depth investigation 是</span><strong><span>正式、学术、理性</span></strong><span>语境中“深入调查”的常用表达</span></p><ul><li><p><strong><span>know extremely well</span></strong><span> 是日常口语表达，意思是“非常了解”，但语气随意，</span><strong><span>不够正式</span></strong><span>，也不突出“经过研究得出的了解”。</span></p></li></ul><p><span>所以这里选择 investigation 更合适，因为这个句子在谈判断一个人时，</span><strong><span>直觉不能取代经过深入调查得出的结论</span></strong><span>，需要的是理性分析，而不是“我觉得我了解他”。</span></p></li><li><p><span>instinctive one 表示出于本能的判断</span></p></li><li><p><span>be bound to do sth 表示必然会做某事/表示某事必然会发生</span></p></li><li><p><span>contribute to 表示促成、造成某种结果</span></p></li><li><p><span>the advantage of 优点/优势或利益</span></p></li><li><p><span>the physically well endowed     名词短语，the + 形容词/分词/副词指一类人</span></p><ul><li><p><strong><span>well endowed</span></strong><span> 表示“被很好地赋予了天赋或条件/天生条件优越”，常用于：</span><strong><span>体格上优势</span></strong><span>（如身高、容貌、身材等）或</span><strong><span>隐含暗指生理特征</span></strong><span>（比如男性生殖器较大，女性胸部丰满等）。</span></p></li><li><p><strong><span>the physically well endowed</span></strong><span>  是一个名词短语，意思是“被很好地赋予身体条件的/身体条件优越的人”，也可以理解为：the people who are well endowed in physical terms</span></p></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><blockquote><p><span>Scientists have made a breakthrough in the treatment for acne. The Daily Mail of London reported a vaccine which promises to halt a key cause of the unsightly and painful condition could be available within as little as 5 years. The breakthrough approach is a departure from current treatments, which mostly rely on antibiotics to &quot;blitz&quot; the bacteria that cause spots. The medicines can upset the skin&#39;s natural balance and leave some sufferers at risk of scarring. Scientists at the University of California at San Diego are working in partnership with the world&#39;s biggest vaccine company, Sanofi Pasteur, to create the jab.</span></p><p>&nbsp;</p><p><span>据英国《每日邮报》报道,日前,科学家在“攻克”青春痘方面取得重大突破,一种对付 (难看且痛苦的)青春痘的疫苗有望在5年内问世。现行治痘方法依靠抗生素杀灭引起痘痘的细 菌,但这种方法会破坏皮肤的自然平衡,有些患者将因此留下痘痕。美国加州大学圣地亚哥分 校和世界最大疫苗生产公司赛诺菲巴斯德正在合作研发这种新型抗痘疫苗。</span></p></blockquote><div class="md-alert md-alert-tip tip"><p><span class='md-alert-text md-alert-text-tip'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</span><br></p><p><span>英文原文中acne/the unsightly and painful condition/spots构成了同义替换,译为中文时要 “九九归一”;此外,treatments/medicines构成同义替换,vaccine/jab构成了同义替换,如何 在没有词典辅助的情况下,通过分析句子的关系也能轻松搞定这些翻译“玄机”。此外,“The breakthrough approach is a departure from”属于上下文衔接句,而且上文已经提到了是“突 破”,所以,译文直接将其省略,体现了“增删得当保可读”的原则。</span></p></div><ul><li><p><span>make a breakthrough in 表示在某领域取得突破</span></p></li><li><p><span>treatment for acne 是固定表达，表示针对痤疮的治疗</span></p></li><li><p><span>the Daily Mail of London 伦敦日报</span></p></li><li><p><span>a vaccine which promises to halt...：一款有望阻断主要病因的疫苗</span></p></li><li><p><span>halt a key cause：阻止主要病因，是新闻报道中常用的医学表达</span></p></li><li><p><span>the unsightly and painful condition：指痤疮（acne），用了两个形容词突出其影响外观和造成痛感</span></p></li><li><p><span>as far as prep. 就...而言, 至于@conj. 到...程度</span></p></li><li><p><span>be available within as little as five years：最短五年内可用 表示时间预期，as little as 用来强调时间之短</span></p></li><li><p><span>breakthrough approach  突破性方法</span></p></li><li><p><span>be a departure from 表示“不同于”或“背离传统方式”</span></p></li><li><p><span>rely on antibiotics：依赖抗生素</span></p></li><li><p><span>blitz the bacteria：blitz 原意是“突击轰炸”，在此比喻为“猛攻细菌”，是口语化的形象表达</span></p></li><li><p><span>the bacteria that cause spots：导致痘痘的细菌</span></p></li><li><p><span>upset the skin’s natural balance：扰乱皮肤的自然平衡</span></p></li><li><p><span>leave sb at risk of sth：使某人处于……的风险中</span></p></li><li><p><span>at risk of scarring：有留下疤痕的风险，scarring 作名词，常用于医学语境</span></p></li><li><p><span>work in partnership with 表示与……合作</span></p></li><li><p><span>the jab 是英式用法，口语中指疫苗注射（即 the vaccine）</span></p></li><li><p><span>Sanofi Pasteur 是世界最大疫苗公司之一</span></p></li></ul><h1 id='5'><span>5</span></h1><blockquote><p><span>The 18th-century Chinese emperor Qianlong made elaborate preparations for retirement. He commissioned an exquisite retreat in Beijing&#39;s Forbidden City, complete with trompe l&#39;oeil paintings and meditation cushions. Its name translates as the &quot;Studio of Exhaustion from Diligent Service&quot;. Many elderly Chinese have shown equal diligence and felt similar exhaustion. But their retirements have been less gilded. In 2009 less than 30% of China&#39;s adults were covered by the government&#39;s pensions patchwork. The only cushion for most rural folk was their field and their family.</span></p><p>&nbsp;</p><p><span>18世纪的中国皇帝乾隆曾为自己的退位后的生活煞费苦心。他曾命人在北京紫禁城里打造 一座奢华处所,颐养天年。这就是倦勤斋,屋内用通景画装饰,摆放了几个蒲团。倦勤斋意为 “日理万机劳累之时的听戏消遣之地”。 在中国,许多老人同样兢兢业业、操劳半生,有着同样的累倦之感。但与乾隆相比,他们 退休后的生活却并不那么滋润。2009年,中国政府推出的各类养老金计划覆盖率低于30%。那 时,大多数农村老人只能依靠土地和家人养老。</span></p></blockquote><p><span>make elaborate preparations for（为……做精心准备）</span></p><p><span>commission a exquisite retreat（委托建造退休豪宅）</span></p><p><span>in Beijing&#39;s Forbidden City   北京紫禁城</span></p><p><span>complete with（附带，配有）</span></p><p><span>trompe l&#39;oeil painting（错视画，视觉幻象画）</span></p><p><span>translate as（翻译为）</span></p><p><span>show diligence（展现勤奋）</span></p><p><span>feel exhaustion（感到疲惫）</span></p><p><span>be covered by（被……覆盖，常用于保险或福利）</span></p><p><span>pensions patchwork（拼接式养老金体系，隐喻制度不完善）</span></p><p><span>the only cushion（唯一的缓冲、依靠）</span></p><p><span>unsightly and painful condition</span><span>	</span><span>难看且令人痛苦的状况</span></p><p><strong><span>gilded retirement</span></strong></p><ul><li><p><span>含义：表面金碧辉煌的退休生活</span></p></li><li><p><span>gilded 是比喻用法，实际常暗示“外表华丽但不一定真实幸福”</span></p></li></ul><p><strong><span>from diligent service</span></strong></p><ul><li><p><span>修饰 exhaustion，说明疲惫的来源</span></p></li></ul><p><strong><span>by the government’s pensions patchwork</span></strong></p><ul><li><p><span>by 表被动施动者，patchwork 表示制度的“不统一、不完善”</span></p></li></ul><p><strong><span>Studio of Exhaustion from Diligent Service</span></strong></p><ul><li><p><span>带有传统中国官场文化背景色彩，用“疲于勤政”隐喻权力带来的负担和倦怠</span></p></li></ul><p><strong><span>pensions patchwork</span></strong></p><ul><li><p><span>patchwork（拼布、拼凑物）在这里表示养老金系统不统一、不连贯，是贬义比喻表达</span></p></li><li><p><span>常用于批评政府政策缺乏系统性</span></p></li></ul><p><strong><span>the only cushion</span></strong></p><ul><li><p><span>cushion 除了“坐垫”，在社会语境中表示“生活缓冲”、“安全网”，含义抽象化</span></p></li></ul><p>&nbsp;</p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><ol start='' ><li><p><span>第1句 → 第2句：讲乾隆为退休做了准备 → 接着具体说明他建了一个精致的退隐之所，举例展开</span></p></li><li><p><span>第2句 → 第3句：描述建筑细节，并点出其名字含义 → 衔接主题“勤政带来的倦怠”</span></p></li><li><p><span>第3句 → 第4句：从乾隆的“精致退休”过渡到普通老年人“同样勤劳但待遇不同”，形成对比</span></p></li><li><p><span>第4句 → 第5句 → 第6句：逐步揭示现实问题——退休待遇不平等 → 提出数据 → 补充农村老人更加贫困的现实</span></p></li></ol><p><span>整体逻辑：历史人物 → 建筑细节 → 命名寓意 → 引出现代对比 → 数据支撑 → 农村现实</span></p><p><span>这是“以小见大、对比引出问题”的经典写作结构。</span></p></div><p>&nbsp;</p><p>&nbsp;</p><blockquote><p><span>As America </span><strong><span>hurries down the haunted trail</span></strong><span> toward Halloween, scariness is everywhere. Omens are omnipresent. So many real and imagined aspects of the future are frightening. How spooky is America at the moment? As NPR reported, let us count, Dracula.</span></p><p>&nbsp;</p><p><span>万圣前夜的捣鬼玩闹就要到了,此刻的美国充斥着恐惧,凶兆无处不在。对未来的恐惧, 既有现实的担忧,又有想象的不安。美国现在有多诡异?让我们跟着美国全国公共电台的报 道,一起数数这些“吸血鬼”。</span></p></blockquote><p><strong><span>As</span></strong><span>：引导时间或原因状语从句，意为</span><strong><span>“当……之时</span></strong><span>”或“</span><strong><span>随着</span></strong><span>……</span></p><p><span>America 被描写成“在走路”，</span><strong><span>拟人化</span></strong></p><p><strong><span>hurries down</span></strong><span>：谓语短语，急忙；赶到；赶紧下来；匆忙地走下（某路径），比喻性用法</span><strong><span>隐喻表达</span></strong><span>（haunted trail 代表文化氛围，而非实物）</span></p><p><strong><span>the haunted trail</span></strong><span>：宾语，字面是“闹鬼的小路”，比喻“充满恐怖气氛的路径”</span></p><p><strong><span>toward Halloween</span></strong><span>：方向状语，表示“朝着万圣节”时间点前进（表示时间临近）</span></p><p><span>hurry down the trail 加快脚步沿着路径走（此处为比喻用法）</span></p><p><span>be everywhere 到处都是</span></p><p><span>omens are omnipresent 预兆无所不在（高度概括式表达）</span></p><p><span>real and imagined aspects 真实的与想象中的方面</span></p><p><span>aspects of the future 未来的各个方面</span></p><p><span>be frightening 令人害怕的</span></p><p><span>how + 形容词 疑问句型（how spooky）</span></p><p><span>at the moment 此刻</span></p><p><span>as [source] reported 正如……报道所说</span></p><p><span>let us count 让我们数一数（常用于列举前）</span></p><p><span>Dracula 作为文化符号，象征恐怖的代表（此处是戏谑性指称）</span></p><p>&nbsp;</p><p>&nbsp;</p><h1 id='6'><span>6</span></h1><blockquote><p><span>In the cities, workers are obliged to supplement the state pension with contributions to individual accounts. In the countryside, they are encouraged to do the same. By one estimate about 2.5 trillion yuan has been paid into these accounts. But precious little of that money has stayed in them. </span></p><p>&nbsp;</p><p><span>城镇职工养老保险由社会统筹和个人账户两部分组成,个人缴费划入个人账户;农村居民参照这一模式执行。据估计,个人账户缴纳资金已达2.5万亿元,但实际余额却寥寥无几。</span></p><p><span>GPT   在城市里，工人被要求通过向个人账户缴费来补充国家养老金。在农村，人们则被鼓励也这样做。据某项估算，大约有2.5万亿元人民币已被缴入这些账户。但这些钱中，真正留在账户里的却少之又少。</span></p></blockquote><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><ol start='' ><li><p><span>第1句与第2句：构成并列对比结构。前者讲城市工人被迫（obliged）补充养老金，后者讲农村人被鼓励（encouraged）这样做，句内是平行关系，句间是城市与乡村的对应描述。</span></p></li><li><p><span>第3句：承接上文，指出无论城市或农村，这些账户的总体缴费额已经达到 2.5 万亿人民币，起到量化说明的作用。</span></p></li><li><p><span>第4句：转折（But），强调虽然看起来缴了很多钱，但实际能保留在账户里的非常少。这是典型的“数据反讽”结构，用来揭示养老金系统的问题。</span></p></li></ol><p><span>整体逻辑结构为：</span>
+<span> 制度要求（城市 vs 农村） → 数据佐证 → 现实问题（钱留不住）</span></p></div><p><span>oblige to do something 被迫去做某事</span>
+<span> supplement the pension 补充养老金</span>
+<span> state pension 国家养老金</span>
+<span> contribution to 账户的缴纳 / 投入/对……的缴纳</span>
+<span> individual account 个人账户</span>
+<span> be encouraged to do 被鼓励去做</span>
+<span> by one estimate 据某一估算。去掉one，语感上不够完整，也缺乏明确来源感。one是泛指，相当于“其中一个、某个、某位专家/机构的估算”，它强调</span><strong><span>这只是众多估算中的一个</span></strong><span>，不一定是官方数据。这在新闻、学术、评论中是</span><strong><span>非常常见的模糊来源表达</span></strong><span>，用来引出数据的同时不做绝对性判断，留下</span><strong><span>信息模糊性</span></strong><span>，增强语气灵活度。</span></p><p><span>By one account, the number was even higher.（据某项说法，数字甚至更高。）</span></p><p><span>By some estimates, global warming could displace 200 million people.（据一些估计，全球变暖可能导致2亿人流离失所。） pay into (an account) 向账户缴钱</span>
+<span> precious little 几乎没有，非常少（强调性表达）</span>
+<span> stay in (an account) 留在账户中</span></p><p>&nbsp;</p><p>&nbsp;</p><h1 id='7'><span>7</span></h1><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br></p><p><span>“of&quot; 前属于英文的形象词或概括词，后面跟的则是实意、具体词，一旦翻译行文受阻，可考虑重点处理实意词，“of”前的词可以略去不译</span></p></div><blockquote><p><span>As this kaleidoscope of problems plays out, we are also witness to a redistribution of the geopolitical deck of cards on a global scale. With the rise of the emerging countries, new and stronger voices from the developing world are making themselves heard. The poorest countries, once silent, are today much clearer and vocal about their priorities. What they are saying loud and clear is that the rules of the multilateral system must change.</span></p><p>&nbsp;</p><p>&nbsp;</p></blockquote><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h1 id='8'><span>8</span></h1><blockquote><p><span>YANG RONGLIN, a teacher, usually spends his summer holidays in China. This year Mr Yang, who is 50, decided to venture abroad for the first time, booking a two-week coach tour of America. Mr Yang joins a multitude of Chinese tourists venturing overseas. In the first half of this year 38m Chinese took international trips, 18% more than in the same period last year. In 2011 they spent $73 billion while travelling abroad, third only to Germans and Americans.</span></p><p><span> </span></p><p><span>杨荣林(音译)是一位教师,往年暑假,他都待在国内。然而今年,年届半百的老杨一改往 常,预订了去美国两周的大巴游,决定到国外转一圈。老杨是中国出境旅游大军中的一员(或 者:现在许多国人都纷纷选择出境游)。今年上半年,中国出境游达3800万人次,同比增长 18%。2011年中国游客海外旅游消费达730亿美元,仅次于德美游客,居世界第三位。</span></p></blockquote><p><span> venture abroad 出国探险（初次大胆尝试，重点在“第一次尝试+探索”含义）</span></p><p><span> coach tour 长途巴士旅游</span></p><p><span> join a multitude of 加入大量……之列/成为……一员</span></p><p><span>multitude of 是集合词，意为“大量的”</span></p><p><span> venture overseas 出国旅游或探险</span></p><p><span> take international trips 进行国际旅行</span></p><p><span> in the same period last year 去年同期</span></p><p><span> while travelling abroad 在出国旅游期间</span></p><p><span> be third only to 仅次于……位居第三</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h1 id='9'><span>9</span></h1><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br></p><p><span>动词处理“隐词法”：很多时候找不到概念直接对等的译词，所以有了主语和宾语，完全可以</span><strong><span>推测</span></strong><span>添加适当的动词,</span></p></div><blockquote><p><span>When conglomerates were the rage, he preached against reckless mergers and acquisitions. When executives were engaged in empire-building, he argued against excess staff and the inefficiencies of numerous &quot;assistants to&quot;.</span></p></blockquote><p><mark><span>be the rage</span></mark><span>  </span><span>	</span><span>风靡一时</span>
+<span>preach against 大力反对，公开批评</span>
+<span>reckless mergers and acquisitions 鲁莽的并购行为</span>
+<span>be engaged in 从事于</span>
+<mark><span>empire-building</span></mark><span> 扩张事业版图（多含贬义）</span>
+<span>argue against 反对，提出反对意见</span>
+<span>excess staff 编制过剩</span>
+<span>the inefficiencies of... ……的低效</span>
+<span>assistants to 某人的助理（职位层级用法，常被讽刺为冗员）</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h1 id='10'><span>10</span></h1><div class="md-alert md-alert-important important"><p><span class='md-alert-text md-alert-text-important'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</span><br></p><p><span>具体适当“宏观化”：英文细节描述往往在中文里都是高度概括表达。如: </span><mark><span>50% of the population are now living in cities and towns</span></mark><span>, 中文应宏观处理为:城镇化率达50%。</span></p></div><p><span>population 是集合名词（如 </span><mark><span>population, family, team, government</span></mark><span> 等）通常形式上是单数，但可以根据语义决定用单还是复数动词</span></p><p><span> </span><strong><span>are</span></strong><span>，说明说话者从语义上，从population 的抽象整体中抽出一半人口，强调这些很多具体的人住在城镇</span></p><blockquote><p><span>In the coming decades, Europe&#39;s influence on affairs beyond its borders will be sharply limited, and it is in other regions, not Europe, that the 21st century will be most clearly forged and defined. Certainly, one reason for NATO&#39;s increasing marginalization stems from the behavior of its European members. </span></p><p><span> </span></p></blockquote><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><blockquote><p><span>But the sad reality is that young people are rarely discerning and, by dint of poor time management skills, often end up wasting an inordinate amount of precious, never-returning time watching trash, their brains wallowing in a trough of mental lethargy.</span></p></blockquote><p><span>the sad reality is that…… 令人遗憾的现实是……</span>
+<span> rarely discerning 少有判断力</span>
+<span> by dint of 由于，凭借（强调原因）</span>
+<span> poor time management skills 糟糕的时间管理能力</span>
+<span> end up doing 最终……，以……告终</span>
+<span> inordinate amount of time 过量的时间</span>
+<span> precious, never-returning time 宝贵且一去不返的时间</span>
+<span> watch trash 看垃圾内容（如低质量内容）</span>
+<span> wallow in 沉溺于（常指负面状态）</span>
+<span> a trough of mental lethargy 思维迟钝的低谷、停滞状态</span></p></div></div>
+</body>
+</html>
